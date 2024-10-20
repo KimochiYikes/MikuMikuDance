@@ -1,5 +1,4 @@
 ﻿#include "pch.h"
-#include "SourceCode/cKeyframe.hpp"
 
 void Main()
 {
@@ -10,10 +9,7 @@ void Main()
     freopen_s(&fp, "CONOUT$", "w", stderr);
     freopen_s(&fp, "CONIN$", "r", stdin);
 
-    printf("Console was allocated. Hello World!\n");
-
-    size_t size = sizeof(cKeyframe_Camera);
-    printf("Size of cKeyframe_Camera: 0x%X bytes\n", (unsigned int)size);
+    printf("Console was allocated. Hello world!\n");
 }
 
 BOOL APIENTRY DllMain(

@@ -1,23 +1,25 @@
 #include "pch.h"
 #include "cMMD.hpp"
 
-// x64 - 0x5A8B0, x86 - 0x10140
-float cMMD::CalculateCameraInterpolationFactor(int type, int index, float linear)
+// x64 - 0x5A8B0, x86 - 0x10140  k
+float cMMD::CalculateCameraInterpolationFactor(CameraInterpolationType type, int index, float linear)
 {
+    unsigned int typeValue = (unsigned int)type;
+
     cKeyframe_Camera* KeyframeList_Camera = this->KeyframeList_Camera;
 
     if (
-        KeyframeList_Camera[index].AX[type] != KeyframeList_Camera[index].AY[type] || 
-        KeyframeList_Camera[index].BX[type] != KeyframeList_Camera[index].BY[type]
+        KeyframeList_Camera[index].AX[typeValue] != KeyframeList_Camera[index].AY[typeValue] ||
+        KeyframeList_Camera[index].BX[typeValue] != KeyframeList_Camera[index].BY[typeValue]
     )
     {
         float org = 0.5f;
         float stepSize = 0.5f;
 
-        float ax = (float)(KeyframeList_Camera[index].AX[type] / 127);
-        float bx = (float)(KeyframeList_Camera[index].BX[type] / 127);
-        float ay = (float)(KeyframeList_Camera[index].AY[type] / 127);
-        float by = (float)(KeyframeList_Camera[index].BY[type] / 127);
+        float ax = (float)(KeyframeList_Camera[index].AX[typeValue] / 127);
+        float bx = (float)(KeyframeList_Camera[index].BX[typeValue] / 127);
+        float ay = (float)(KeyframeList_Camera[index].AY[typeValue] / 127);
+        float by = (float)(KeyframeList_Camera[index].BY[typeValue] / 127);
 
         for (int i = 0; i < 12; i++)
         {

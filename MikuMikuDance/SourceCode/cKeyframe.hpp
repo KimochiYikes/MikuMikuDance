@@ -3,8 +3,9 @@
 #ifndef CKEYFRAME_HPP
 #define CKEYFRAME_HPP
 
-enum class CameraInterpolationType : int {
-	MoveX = 0,
+enum class CameraInterpolationType
+{
+	MoveX,
 	MoveY,
 	MoveZ,
 	Rotation,

@@ -10,7 +10,7 @@ struct cMMD
     cKeyframe_Camera* KeyframeList_Camera;
 
 	float CalculateCameraInterpolationFactor(
-        int type, int index, float linear
+        CameraInterpolationType type, int index, float linear
     );
 };
 
