@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "cMMD.hpp"
 
-// x64 - 0x5A8B0, x86 - 0x10140  k
+// x64 - 0x5A8B0, x86 - 0x10140
 float cMMD::CalculateCameraInterpolationFactor(CameraInterpolationType type, int index, float linear)
 {
     unsigned int typeValue = (unsigned int)type;
