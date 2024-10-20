@@ -1,6 +1,7 @@
 #ifndef PCH_H
 #define PCH_H
 
-#include "../pch.h"
+// w tym miejscu dodaj nag³ówki, które maj¹ byæ wstêpnie kompilowane
+#include "../framework.h"
 
-#endif // !PCH_H
+#endif //PCH_H

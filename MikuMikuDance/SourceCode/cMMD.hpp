@@ -9,6 +9,12 @@ struct cMMD
     gap _0[0x3D0];
     cKeyframe_Camera* KeyframeList_Camera;
 
+    // Temp!
+    bool IsRendering;
+    float FrameTime;
+    int FrameIndex;
+    bool IsEnglishModeOn;
+
 	float CalculateCameraInterpolationFactor(
         CameraInterpolationType type, int index, float linear
     );

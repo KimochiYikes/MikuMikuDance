@@ -50,3 +50,5 @@ float cMMD::CalculateCameraInterpolationFactor(CameraInterpolationType type, int
     }
     return linear;
 }
+
+// x64 - 0xCDB4C

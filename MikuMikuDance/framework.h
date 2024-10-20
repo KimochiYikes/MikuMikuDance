@@ -4,3 +4,6 @@
 // Pliki nagłówkowe systemu Windows
 #include <windows.h>
 #include <iostream>
+
+#include "Types.hpp"
+#include "Globals.hpp"
