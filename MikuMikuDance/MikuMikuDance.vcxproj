@@ -163,9 +163,6 @@
     <ClCompile Include="SourceCode\cMMD.cpp" />
     <ClCompile Include="SourceCode\Exp.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\..\..\Documents\My Cheat Scans\MikuMikuDance.CT" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
