@@ -5,15 +5,13 @@ void cMMD::UpdateKeyState(VirtualKey virtualKey, VirtualKeyState* virtualKeyStat
 {
     if (GetKeyState((int)virtualKey) & (1 << 7))
     {
-        if ((int)*virtualKeyState)
+        if (*virtualKeyState != VirtualKeyState::Idle)
         {
             *virtualKeyState = VirtualKeyState::Held;
             return;
         }
 
         *virtualKeyState = VirtualKeyState::Pressed;
-
-        //printf("0x%X was pressed!\n", (int)virtualKey);
     }
     else
     {
