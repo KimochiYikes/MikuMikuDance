@@ -1,6 +1,34 @@
 #include "pch.h"
 #include "cMMD.hpp"
 
+void cMMD::UpdateKeyState(VirtualKey virtualKey, VirtualKeyState* virtualKeyState)
+{
+    if (GetKeyState((int)virtualKey) & (1 << 7))
+    {
+        if ((int)*virtualKeyState)
+        {
+            *virtualKeyState = VirtualKeyState::Held;
+            return;
+        }
+
+        *virtualKeyState = VirtualKeyState::Pressed;
+
+        //printf("0x%X was pressed!\n", (int)virtualKey);
+    }
+    else
+    {
+        if (*virtualKeyState != VirtualKeyState::Pressed && *virtualKeyState != VirtualKeyState::Held)
+        {
+            *virtualKeyState = VirtualKeyState::Idle;
+            return;
+        }
+
+        *virtualKeyState = VirtualKeyState::Released;
+    }
+    this->KeyUpdateTick = 1;
+    return;
+}
+
 // x64 - 0x5A8B0, x86 - 0x10140
 float cMMD::CalculateCameraInterpolationFactor(CameraInterpolationType type, int index, float linear)
 {

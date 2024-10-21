@@ -142,11 +142,14 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="Globals.hpp" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="SourceCode\cAccessory.hpp" />
     <ClInclude Include="SourceCode\cKeyframe.hpp" />
     <ClInclude Include="SourceCode\cMMD.hpp" />
+    <ClInclude Include="SourceCode\cMMD_A16E0.hpp" />
+    <ClInclude Include="SourceCode\cModel.hpp" />
     <ClInclude Include="SourceCode\Exp.hpp" />
     <ClInclude Include="SourceCode\pch.h" />
-    <ClInclude Include="SourceCode\Types.hpp" />
+    <ClInclude Include="Types.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />

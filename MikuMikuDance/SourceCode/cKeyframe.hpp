@@ -35,4 +35,20 @@ struct cKeyframe_Camera
 	int FollowBone;
 };
 
+struct cKeyframe_Light
+{
+};
+
+struct cKeyframe_Shadow
+{
+};
+
+struct cKeyframe_Gravity
+{
+};
+
+struct cKeyframe_Accessory
+{
+};
+
 #endif // !CKEYFRAME_HPP
