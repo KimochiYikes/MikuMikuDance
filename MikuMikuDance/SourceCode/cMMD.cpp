@@ -1,6 +1,8 @@
-#include "pch.h"
+#include "Framework.hpp"
 #include "cMMD.hpp"
 
+// x64 - 0x26F50, x32 - 0xE3D0
+/* Update the press state of a key */
 void cMMD::UpdateKeyState(VirtualKey virtualKey, VirtualKeyState* virtualKeyState)
 {
     if (GetKeyState((int)virtualKey) & (1 << 7))
@@ -27,6 +29,9 @@ void cMMD::UpdateKeyState(VirtualKey virtualKey, VirtualKeyState* virtualKeyStat
     return;
 }
 
+
+// x64 - 0x26AD0, x32 - 0x2D3A0
+/* Update the press state of all required key combos */
 void cMMD::UpdateKeyStates()
 {
     this->UpdateKeyState(VirtualKey::Up, &this->KeyStates.Up);
@@ -118,53 +123,56 @@ void cMMD::UpdateKeyStates()
 }
 
 // x64 - 0x5A8B0, x86 - 0x10140
-float cMMD::CalculateCameraInterpolationFactor(CameraInterpolationType type, int index, float linear)
+/* Calculate the interpolation weight for the next keyframe using cubic bézier */
+float cMMD::CalculateCameraInterpolationFactor(CameraInterpolationType type, int index, float time)
 {
+    /*
+        type: Interpolation type, e.g. x axis move, rotation, etc.
+        index: Index of the keyframe we are interpolating to
+        time: Blending factor towards the next keyframe withing 0 to 1
+    */
     unsigned int typeValue = (unsigned int)type;
 
     cKeyframe_Camera* KeyframeList_Camera = this->KeyframeList_Camera;
 
     if (
-        KeyframeList_Camera[index].AX[typeValue] != KeyframeList_Camera[index].AY[typeValue] ||
-        KeyframeList_Camera[index].BX[typeValue] != KeyframeList_Camera[index].BY[typeValue]
+        KeyframeList_Camera[index].AX[typeValue] == KeyframeList_Camera[index].AY[typeValue] &&
+        KeyframeList_Camera[index].BX[typeValue] == KeyframeList_Camera[index].BY[typeValue]
     )
+        return time;  // Linear interpolation is assumed
+
+    float org = 0.5f;
+    float stepSize = 0.5f;
+
+    float ax = (float)(KeyframeList_Camera[index].AX[typeValue] / 127);
+    float bx = (float)(KeyframeList_Camera[index].BX[typeValue] / 127);
+    float ay = (float)(KeyframeList_Camera[index].AY[typeValue] / 127);
+    float by = (float)(KeyframeList_Camera[index].BY[typeValue] / 127);
+
+    for (int i = 0; i < 12; i++)
     {
-        float org = 0.5f;
-        float stepSize = 0.5f;
-
-        float ax = (float)(KeyframeList_Camera[index].AX[typeValue] / 127);
-        float bx = (float)(KeyframeList_Camera[index].BX[typeValue] / 127);
-        float ay = (float)(KeyframeList_Camera[index].AY[typeValue] / 127);
-        float by = (float)(KeyframeList_Camera[index].BY[typeValue] / 127);
-
-        for (int i = 0; i < 12; i++)
-        {
-            stepSize *= 0.5;
-
-            float inv = (1 - org);
-            float bezier = (
-                3 * (
-                    ax * org * powf(inv, 2) + 
-                    bx * inv * powf(org, 2)
-                ) + powf(org, 3)
-            );
-
-            if (linear == bezier)
-                break;
-
-            org = linear <= bezier ? org - stepSize : org + stepSize;
-        }
+        stepSize *= 0.5;
 
         float inv = (1 - org);
         float bezier = (
             3 * (
-                ay * org * powf(inv, 2) +
-                by * inv * powf(org, 2)
-                ) + powf(org, 3)
-            );
-        return bezier;
-    }
-    return linear;
-}
+                ax * org * powf(inv, 2) + 
+                bx * inv * powf(org, 2)
+            ) + powf(org, 3)
+        );
 
-// x64 - 0xCDB4C
+        if (time == bezier)
+            break;
+
+        org = time <= bezier ? org - stepSize : org + stepSize;
+    }
+
+    float inv = (1 - org);
+    float bezier = (
+        3 * (
+            ay * org * powf(inv, 2) +
+            by * inv * powf(org, 2)
+            ) + powf(org, 3)
+        );
+    return bezier;
+}

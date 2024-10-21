@@ -1,69 +1,69 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Pliki źródłowe">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Files">
+      <UniqueIdentifier>{e7362bea-58ae-4939-8824-9c54c9d9adef}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Pliki nagłówkowe">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="Files\Framework">
+      <UniqueIdentifier>{87116290-f8fb-4c2d-b960-19924c439f2f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Pliki zasobów">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Files\SourceCode">
+      <UniqueIdentifier>{5be576ab-53f6-4c91-940c-98ed70dbdebc}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="framework.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="pch.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceCode\cMMD.hpp">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceCode\pch.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceCode\cKeyframe.hpp">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceCode\Exp.hpp">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="Globals.hpp">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="Types.hpp">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceCode\cModel.hpp">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceCode\cAccessory.hpp">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceCode\cMMD_A16E0.hpp">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
+    <Filter Include="Files\SourceCode\Structs">
+      <UniqueIdentifier>{82d9bce3-bf9e-403f-b209-7222707d9f9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Files\SourceCode\Structs\cMMD - it%27s the everything struct">
+      <UniqueIdentifier>{ea3a6a44-1a70-4295-9091-33cf154694b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Files\SourceCode\Structs\Temporary">
+      <UniqueIdentifier>{6412de71-866e-4ba5-bef7-b9e721f15bdd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="pch.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceCode\cMMD.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceCode\Exp.cpp">
-      <Filter>Pliki źródłowe</Filter>
+      <Filter>Files</Filter>
     </ClCompile>
     <ClCompile Include="Globals.cpp">
-      <Filter>Pliki nagłówkowe</Filter>
+      <Filter>Files\Framework</Filter>
     </ClCompile>
+    <ClCompile Include="SourceCode\ExportedFunctions.cpp">
+      <Filter>Files\SourceCode</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCode\cMMD.cpp">
+      <Filter>Files\SourceCode\Structs\cMMD - it%27s the everything struct</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Globals.hpp">
+      <Filter>Files\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Types.hpp">
+      <Filter>Files\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\ExportedFunctions.hpp">
+      <Filter>Files\SourceCode</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\cMMD.hpp">
+      <Filter>Files\SourceCode\Structs\cMMD - it%27s the everything struct</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\cMMD_A16E0.hpp">
+      <Filter>Files\SourceCode\Structs\Temporary</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\cAccessory.hpp">
+      <Filter>Files\SourceCode\Structs\Temporary</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\cKeyframe.hpp">
+      <Filter>Files\SourceCode\Structs\Temporary</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\cModel.hpp">
+      <Filter>Files\SourceCode\Structs\Temporary</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework.hpp">
+      <Filter>Files\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\Framework.hpp">
+      <Filter>Files\SourceCode</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
