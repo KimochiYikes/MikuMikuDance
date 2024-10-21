@@ -66,4 +66,9 @@
       <Filter>Pliki nagłówkowe</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Documents\My Cheat Scans\MikuMikuDance.CT">
+      <Filter>Pliki zasobów</Filter>
+    </None>
+  </ItemGroup>
 </Project>
