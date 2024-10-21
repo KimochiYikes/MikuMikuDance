@@ -129,7 +129,7 @@ float cMMD::CalculateCameraInterpolationFactor(CameraInterpolationType type, int
     /*
         type: Interpolation type, e.g. x axis move, rotation, etc.
         index: Index of the keyframe we are interpolating to
-        time: Blending factor towards the next keyframe withing 0 to 1
+        time: Blending factor towards the next keyframe withing 0 and 1
     */
     unsigned int typeValue = (unsigned int)type;
 
