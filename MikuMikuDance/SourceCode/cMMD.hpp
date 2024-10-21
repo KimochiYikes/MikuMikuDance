@@ -207,6 +207,8 @@ struct cMMD
         VirtualKey virtualKey, VirtualKeyState* virtualKeyState
     );
 
+    void UpdateKeyStates();
+
 	float CalculateCameraInterpolationFactor(
         CameraInterpolationType type, int index, float linear
     );
