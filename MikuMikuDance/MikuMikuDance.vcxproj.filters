@@ -40,7 +40,9 @@
       <Filter>Files\SourceCode\Structs\cMMD - it%27s the everything struct</Filter>
     </ClCompile>
     <ClCompile Include="SourceCode\cModel.cpp" />
-    <ClCompile Include="SourceCode\UI.cpp" />
+    <ClCompile Include="SourceCode\UI.cpp">
+      <Filter>Files\SourceCode</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Globals.hpp">

@@ -1,4 +1,4 @@
-#include "UI.hpp"
+ï»¿#include "UI.hpp"
 
 // x64 - 0x3F550
 void __fastcall OnButtonClick(HWND hWnd, int menu_id)
@@ -20,7 +20,7 @@ void __fastcall OnButtonClick(HWND hWnd, int menu_id)
 
 			const char* text = pMMD->IsEnglishModeOn ?
 				"MikuMikuDance Ver.%4.2f\n  (64bitOS Version)\n\nprogrammed by Yu Higuchi" :
-				"MikuMikuDance Ver.%4.2f\n  (64bitOS Version)\n\nprogrammed by ”óŒû—D";
+				"MikuMikuDance Ver.%4.2f\n  (64bitOS Version)\n\nprogrammed by æ¨‹å£å„ª";
 
 			HWND window = pMMD->hSeparateWindow ? 
 				pMMD->hSeparateWindow : 
