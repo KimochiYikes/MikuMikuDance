@@ -13,6 +13,14 @@ enum class CameraInterpolationType
 	ViewAngle
 };
 
+enum class BoneInterpolationType
+{
+	MoveX,
+	MoveY,
+	MoveZ,
+	Rotation
+};
+
 // sizeof=0x54
 struct cKeyframe_Camera
 {
@@ -50,5 +58,19 @@ struct cKeyframe_Gravity
 struct cKeyframe_Accessory
 {
 };
+
+struct cKeyframe_Bone
+{
+	_BYTE gap0[12];
+	char AX[4];
+	char AY[4];
+	char BX[4];
+	char BY[4];
+	cVector3 Position;
+	cVector4 Quaternion;
+	_BYTE gap38[3];
+	char temp_end;
+};
+
 
 #endif // !CKEYFRAME_HPP

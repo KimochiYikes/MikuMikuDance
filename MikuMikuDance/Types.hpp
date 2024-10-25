@@ -75,11 +75,19 @@ enum eSelfShadowMode : __int8
 	Mode2 = 2u,
 };
 
-
+struct cVector2
+{
+	float X, Y;
+};
 
 struct cVector3
 {
 	float X, Y, Z;
+};
+
+struct cVector4
+{
+	float X, Y, Z, W;
 };
 
 struct cVectorRGB

@@ -124,7 +124,7 @@ void cMMD::UpdateKeyStates()
 
 // x64 - 0x5A8B0, x86 - 0x10140
 /* Calculate the interpolation weight for the next keyframe using cubic bézier */
-float cMMD::CalculateCameraInterpolationFactor(CameraInterpolationType type, int index, float time)
+float cMMD::CalculateCameraInterpolationFactor(CameraInterpolationType type, int index, float linear)
 {
     /*
         type: Interpolation type, e.g. x axis move, rotation, etc.
@@ -139,7 +139,7 @@ float cMMD::CalculateCameraInterpolationFactor(CameraInterpolationType type, int
         KeyframeList_Camera[index].AX[typeValue] == KeyframeList_Camera[index].AY[typeValue] &&
         KeyframeList_Camera[index].BX[typeValue] == KeyframeList_Camera[index].BY[typeValue]
     )
-        return time;  // Linear interpolation is assumed
+        return linear;
 
     float org = 0.5f;
     float stepSize = 0.5f;
@@ -156,15 +156,15 @@ float cMMD::CalculateCameraInterpolationFactor(CameraInterpolationType type, int
         float inv = (1 - org);
         float bezier = (
             3 * (
-                ax * org * powf(inv, 2) + 
+                ax * org * powf(inv, 2) +
                 bx * inv * powf(org, 2)
-            ) + powf(org, 3)
-        );
+                ) + powf(org, 3)
+            );
 
-        if (time == bezier)
+        if (linear == bezier)
             break;
 
-        org = time <= bezier ? org - stepSize : org + stepSize;
+        org = linear <= bezier ? org - stepSize : org + stepSize;
     }
 
     float inv = (1 - org);
@@ -174,5 +174,6 @@ float cMMD::CalculateCameraInterpolationFactor(CameraInterpolationType type, int
             by * inv * powf(org, 2)
             ) + powf(org, 3)
         );
+
     return bezier;
 }

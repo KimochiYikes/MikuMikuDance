@@ -2,4 +2,4 @@
 #include "Globals.hpp"
 
 // Temp!
-cMMD* pMMD = new cMMD;
+cMMD* pMMD = nullptr;

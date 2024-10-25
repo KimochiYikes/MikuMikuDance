@@ -19,6 +19,9 @@
     <Filter Include="Files\SourceCode\Structs\Temporary">
       <UniqueIdentifier>{6412de71-866e-4ba5-bef7-b9e721f15bdd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Files\SourceCode\Structs\cModel - shared by PMD and PMX">
+      <UniqueIdentifier>{81ac31df-3b1e-419e-94c8-79159c36f2fd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -33,6 +36,7 @@
     <ClCompile Include="SourceCode\cMMD.cpp">
       <Filter>Files\SourceCode\Structs\cMMD - it%27s the everything struct</Filter>
     </ClCompile>
+    <ClCompile Include="SourceCode\cModel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Globals.hpp">
@@ -56,14 +60,14 @@
     <ClInclude Include="SourceCode\cKeyframe.hpp">
       <Filter>Files\SourceCode\Structs\Temporary</Filter>
     </ClInclude>
-    <ClInclude Include="SourceCode\cModel.hpp">
-      <Filter>Files\SourceCode\Structs\Temporary</Filter>
-    </ClInclude>
     <ClInclude Include="Framework.hpp">
       <Filter>Files\Framework</Filter>
     </ClInclude>
     <ClInclude Include="SourceCode\Framework.hpp">
       <Filter>Files\SourceCode</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\cModel.hpp">
+      <Filter>Files\SourceCode\Structs\cModel - shared by PMD and PMX</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
