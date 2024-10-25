@@ -22,6 +22,9 @@
     <Filter Include="Files\SourceCode\Structs\cModel - shared by PMD and PMX">
       <UniqueIdentifier>{81ac31df-3b1e-419e-94c8-79159c36f2fd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Files\Resources">
+      <UniqueIdentifier>{948854fd-4559-429e-bb66-7ba71c20cdb9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -37,6 +40,7 @@
       <Filter>Files\SourceCode\Structs\cMMD - it%27s the everything struct</Filter>
     </ClCompile>
     <ClCompile Include="SourceCode\cModel.cpp" />
+    <ClCompile Include="SourceCode\UI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Globals.hpp">
@@ -69,5 +73,16 @@
     <ClInclude Include="SourceCode\cModel.hpp">
       <Filter>Files\SourceCode\Structs\cModel - shared by PMD and PMX</Filter>
     </ClInclude>
+    <ClInclude Include="Resource.hpp">
+      <Filter>Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCode\UI.hpp">
+      <Filter>Files\SourceCode</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MikuMikuDance.rc">
+      <Filter>Files\Resources</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

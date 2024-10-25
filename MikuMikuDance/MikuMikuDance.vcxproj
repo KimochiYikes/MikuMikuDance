@@ -24,10 +24,12 @@
     <ClCompile Include="SourceCode\cMMD.cpp" />
     <ClCompile Include="SourceCode\cModel.cpp" />
     <ClCompile Include="SourceCode\ExportedFunctions.cpp" />
+    <ClCompile Include="SourceCode\UI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework.hpp" />
     <ClInclude Include="Globals.hpp" />
+    <ClInclude Include="Resource.hpp" />
     <ClInclude Include="SourceCode\cAccessory.hpp" />
     <ClInclude Include="SourceCode\cKeyframe.hpp" />
     <ClInclude Include="SourceCode\cMMD.hpp" />
@@ -35,7 +37,11 @@
     <ClInclude Include="SourceCode\cModel.hpp" />
     <ClInclude Include="SourceCode\ExportedFunctions.hpp" />
     <ClInclude Include="SourceCode\Framework.hpp" />
+    <ClInclude Include="SourceCode\UI.hpp" />
     <ClInclude Include="Types.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MikuMikuDance.rc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

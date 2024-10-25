@@ -13,6 +13,22 @@ float ExpGetFrameTime()
         return pMMD->FrameIndex / 30.0f;
 }
 
+// x64 - 0xDBA70
+bool ExpGetAcsDisp(int index)
+{
+    int counter = -1;
+
+    for (int i = 0; i < 255; ++i) 
+    {
+        cAccessory* ptr = pMMD->AccessoriesList[i];
+
+        if (ptr && ++counter == index)
+            return ptr->IsDisplayOn;
+    }
+
+    return false;
+}
+
 // x64 - 0xDBBE0
 bool ExpGetEnglishMode()
 {
